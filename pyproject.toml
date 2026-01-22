@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tcp-from-scratch"
+version = "1.0.0"
+description = "A complete TCP implementation built from first principles for deep understanding"
+readme = "README.md"
+authors = [
+    {name = "Umarbek", email = "contact@um.ar"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Internet",
+    "Topic :: System :: Networking",
+]
+keywords = ["tcp", "networking", "protocol", "education", "learning"]
+
+[project.urls]
+Homepage = "https://um.ar/101/tcp"
+Repository = "https://github.com/UmarbekFU/tcp-from-scratch"
+Documentation = "https://github.com/UmarbekFU/tcp-from-scratch/blob/main/docs/DEEP_DIVE.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "mypy>=1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["tcp*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311', 'py312']
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
